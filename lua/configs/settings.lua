@@ -15,16 +15,12 @@ vim.cmd([[ set expandtab ]])
 vim.cmd([[ set guicursor= ]])
 vim.cmd([[ set cursorline ]])
 vim.cmd([[ syntax on ]])
-vim.cmd([[ set bg=dark ]])
+vim.cmd([[ set bg=light ]])
 vim.cmd([[ set termguicolors ]])
-vim.cmd([[
-  let g:onedark_style = 'darker'
-  colorscheme onedark
-]])
+vim.cmd([[ colorscheme seoul256-light ]])
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}
 ]])
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
--- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
