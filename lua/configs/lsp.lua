@@ -35,17 +35,17 @@ cmp.setup({
 require('lspconfig').tsserver.setup {
    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
+require('lspconfig').graphql.setup {}
 
 vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
 vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
 -- vim.cmd([[nnoremap <leader>. :lua vim.lsp.buf.code_action()<CR>]])
--- vim.cmd([[nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>]])
+vim.cmd([[nnoremap rn :lua vim.lsp.buf.rename()<CR>]])
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.diagnostics.eslint,
-        -- require("null-ls").builtins.formatting.eslint,
         require("null-ls").builtins.formatting.eslint_d,
     },
 
