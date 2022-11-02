@@ -17,7 +17,11 @@ vim.cmd([[ set cursorline ]])
 vim.cmd([[ syntax on ]])
 vim.cmd([[ set bg=light ]])
 vim.cmd([[ set termguicolors ]])
-vim.cmd([[ colorscheme seoul256-light ]])
+vim.cmd([[
+  let g:onedark_style = 'light'
+  colorscheme onedark
+]])
+
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}

@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'terroo/vim-simple-emoji'
-  use 'junegunn/seoul256.vim'
+  use 'navarasu/onedark.nvim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'tomtom/tcomment_vim'
