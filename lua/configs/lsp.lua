@@ -45,7 +45,7 @@ vim.cmd([[nnoremap rn :lua vim.lsp.buf.rename()<CR>]])
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
     sources = {
-        require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.diagnostics.eslint_d,
         require("null-ls").builtins.formatting.eslint_d,
     },
 
