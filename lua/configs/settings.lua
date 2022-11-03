@@ -12,7 +12,6 @@ vim.cmd([[ set expandtab ]])
 vim.cmd([[ set shiftwidth=2 ]])
 vim.cmd([[ set softtabstop=2 ]])
 vim.cmd([[ set expandtab ]])
-vim.cmd([[ set guicursor= ]])
 vim.cmd([[ set cursorline ]])
 vim.cmd([[ syntax on ]])
 vim.cmd([[ set bg=light ]])
@@ -24,7 +23,22 @@ vim.cmd([[
 
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
-vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}
-]])
+
+-- change cursor based on mode
+vim.api.nvim_create_autocmd(
+  { "InsertEnter" },
+  { pattern = "*", command = "set cul" }
+)
+vim.api.nvim_create_autocmd(
+  { "InsertLeave" },
+  { pattern = "*", command = "set nocul" }
+)
+
+
+-- telescope
+vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}]])
+vim.cmd([[nnoremap \ :lua require'telescope.builtin'.live_grep{}]])
+vim.cmd([[nnoremap <Leader>j :lua require'telescope.builtin'.grep_string{}]])
+
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
