@@ -36,6 +36,7 @@ require('lspconfig').tsserver.setup {
    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require('lspconfig').graphql.setup {}
+require('lspconfig').sumneko_lua.setup{}
 
 vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
 vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
