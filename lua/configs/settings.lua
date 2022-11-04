@@ -31,4 +31,4 @@ vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}]])
 vim.cmd([[nnoremap \ :lua require'telescope.builtin'.live_grep{}]])
 vim.cmd([[nnoremap <Leader>j :lua require'telescope.builtin'.grep_string{}]])
 
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+require("lualine").setup()
