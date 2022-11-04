@@ -3,10 +3,10 @@ local cmp = require("cmp")
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
-	mapping = {
+	mapping = cmp.mapping.preset.insert({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = function(fallback)
@@ -23,20 +23,24 @@ cmp.setup({
 				fallback()
 			end
 		end,
-	},
-	sources = {
+	}),
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "vsnip" },
+		{ name = "luasnip" },
+	}, {
 		{ name = "buffer" },
-	},
+	}),
 })
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 -- Setup lspconfig.
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 require("lspconfig").tsserver.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = capabilities,
 })
-require("lspconfig").graphql.setup({})
-require("lspconfig").sumneko_lua.setup({})
+require("lspconfig").graphql.setup({ capabilities = capabilities })
+require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
 
 vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
 vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
@@ -70,8 +74,9 @@ require("null-ls").setup({
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	virtual_text = false,
-	float = true,
+	-- float = true,
 })
+
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
 	pattern = "*",
 	callback = function()
