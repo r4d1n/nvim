@@ -22,20 +22,13 @@ vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 
 -- change cursor based on mode
-vim.api.nvim_create_autocmd(
-  { "InsertEnter" },
-  { pattern = "*", command = "set cul" }
-)
-vim.api.nvim_create_autocmd(
-  { "InsertLeave" },
-  { pattern = "*", command = "set nocul" }
-)
+vim.api.nvim_create_autocmd({ "InsertEnter" }, { pattern = "*", command = "set cul" })
+vim.api.nvim_create_autocmd({ "InsertLeave" }, { pattern = "*", command = "set nocul" })
 
-
+vim.cmd([[ set updatetime=1500 ]])
 -- telescope
 vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}]])
 vim.cmd([[nnoremap \ :lua require'telescope.builtin'.live_grep{}]])
 vim.cmd([[nnoremap <Leader>j :lua require'telescope.builtin'.grep_string{}]])
 
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-

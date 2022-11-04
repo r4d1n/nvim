@@ -51,7 +51,6 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.stylua,
 	},
 
-	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -65,5 +64,17 @@ require("null-ls").setup({
 				end,
 			})
 		end
+	end,
+})
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	underline = true,
+	virtual_text = false,
+	float = true,
+})
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.open_float({ scope = "line" })
 	end,
 })
