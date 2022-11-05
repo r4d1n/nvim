@@ -25,7 +25,6 @@ vim.cmd([[ set smartcase ]])
 vim.api.nvim_create_autocmd({ "InsertEnter" }, { pattern = "*", command = "set cul" })
 vim.api.nvim_create_autocmd({ "InsertLeave" }, { pattern = "*", command = "set nocul" })
 
-vim.cmd([[ set updatetime=1500 ]])
 -- telescope
 vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{}]])
 vim.cmd([[nnoremap \ :lua require'telescope.builtin'.live_grep{}]])

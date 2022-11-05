@@ -77,9 +77,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	-- float = true,
 })
 
-vim.api.nvim_create_autocmd({ "CursorHold" }, {
-	pattern = "*",
-	callback = function()
-		vim.diagnostic.open_float({ scope = "line" })
-	end,
-})
+vim.cmd([[nnoremap L :lua vim.diagnostic.open_float({ scope = "line" }) <CR>]])
