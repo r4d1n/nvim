@@ -25,4 +25,14 @@ vim.cmd([[ set smartcase ]])
 vim.api.nvim_create_autocmd({ "InsertEnter" }, { pattern = "*", command = "set cul" })
 vim.api.nvim_create_autocmd({ "InsertLeave" }, { pattern = "*", command = "set nocul" })
 
-require("lualine").setup()
+require("lualine").setup({
+	sections = {
+		lualine_c = {
+			{
+				"filename",
+				file_status = true, -- displays file status (readonly status, modified status)
+				path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+			},
+		},
+	},
+})
