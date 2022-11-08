@@ -52,6 +52,9 @@ require("null-ls").setup({
 	sources = {
 		-- require("null-ls").builtins.diagnostics.eslint_d,
 		require("null-ls").builtins.formatting.eslint_d,
+		require("null-ls").builtins.formatting.prettier.with({
+			filetypes = { "json" },
+		}),
 		require("null-ls").builtins.formatting.stylua,
 	},
 
