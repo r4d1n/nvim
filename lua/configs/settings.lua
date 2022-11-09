@@ -21,9 +21,21 @@ vim.cmd([[
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 
+local ag = vim.api.nvim_create_augroup
+local au = vim.api.nvim_create_autocmd
+
 -- change cursor based on mode
-vim.api.nvim_create_autocmd({ "InsertEnter" }, { pattern = "*", command = "set cul" })
-vim.api.nvim_create_autocmd({ "InsertLeave" }, { pattern = "*", command = "set nocul" })
+au({ "InsertEnter" }, { pattern = "*", command = "set cul" })
+au({ "InsertLeave" }, { pattern = "*", command = "set nocul" })
+
+---Highlight yanked text
+au("TextYankPost", {
+	group = ag("yank_highlight", {}),
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
+	end,
+})
 
 require("lualine").setup({
 	sections = {
