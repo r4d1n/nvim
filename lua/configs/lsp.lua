@@ -43,11 +43,6 @@ require("lspconfig").tsserver.setup({
 require("lspconfig").graphql.setup({ capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
 
-vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
-vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
--- vim.cmd([[nnoremap <leader>. :lua vim.lsp.buf.code_action()<CR>]])
-vim.cmd([[nnoremap rn :lua vim.lsp.buf.rename()<CR>]])
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
 	sources = {
@@ -80,5 +75,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	virtual_text = false,
 	-- float = true,
 })
-
-vim.cmd([[nnoremap L :lua vim.diagnostic.open_float({ scope = "line" }) <CR>]])
