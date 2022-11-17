@@ -42,6 +42,7 @@ require("lspconfig").tsserver.setup({
 })
 require("lspconfig").graphql.setup({ capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
+require("lspconfig").prismals.setup({ capabilities = capabilities })
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
