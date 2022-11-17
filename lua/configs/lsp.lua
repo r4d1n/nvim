@@ -44,15 +44,17 @@ require("lspconfig").graphql.setup({ capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
 require("lspconfig").prismals.setup({ capabilities = capabilities })
 
+local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-require("null-ls").setup({
+null_ls.setup({
 	sources = {
 		-- require("null-ls").builtins.diagnostics.eslint_d,
-		require("null-ls").builtins.formatting.eslint_d,
-		require("null-ls").builtins.formatting.prettier.with({
+		null_ls.builtins.formatting.eslint_d,
+		null_ls.builtins.formatting.prettier.with({
 			filetypes = { "json" },
 		}),
-		require("null-ls").builtins.formatting.stylua,
+		null_ls.builtins.formatting.stylua,
+		-- null_ls.builtins.formatting.prismaFmt
 	},
 
 	on_attach = function(client, bufnr)
