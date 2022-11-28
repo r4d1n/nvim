@@ -4,9 +4,11 @@ vim.cmd([[nnoremap rn :lua vim.lsp.buf.rename()<CR>]])
 vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
 
 -- telescope
-vim.cmd([[nnoremap <Leader>f :lua require'telescope.builtin'.find_files{} <CR>]])
-vim.cmd([[nnoremap <Leader>rg :lua require'telescope.builtin'.live_grep{} <CR>]])
-vim.cmd([[nnoremap <Leader>gs :lua require'telescope.builtin'.grep_string{} <CR>]])
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 
 -- lsp and diagnostic windows
 vim.cmd([[nnoremap <C-k> :lua vim.lsp.buf.hover()<CR>]])
