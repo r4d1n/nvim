@@ -12,5 +12,5 @@ vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 
 -- lsp and diagnostic windows
-vim.cmd([[nnoremap <C-k> :lua vim.lsp.buf.hover()<CR>]])
-vim.cmd([[nnoremap <C-l> :lua vim.diagnostic.open_float({ scope = "line" }) <CR>]])
+vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
+vim.cmd([[nnoremap <C-k> :lua vim.diagnostic.open_float({ scope = "line" }) <CR>]])
