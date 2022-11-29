@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.cmd([[nnoremap rn :lua vim.lsp.buf.rename()<CR>]])
 vim.cmd([[nnoremap gd :lua vim.lsp.buf.definition()<CR>]])
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- telescope
 local builtin = require("telescope.builtin")
