@@ -55,6 +55,7 @@ null_ls.setup({
 		}),
 		null_ls.builtins.formatting.stylua,
 		-- null_ls.builtins.formatting.prismaFmt
+		require("typescript.extensions.null-ls.code-actions"),
 	},
 
 	on_attach = function(client, bufnr)

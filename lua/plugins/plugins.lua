@@ -16,6 +16,7 @@ return require("packer").startup(function()
 	use("Townk/vim-autoclose")
 	use({ "L3MON4D3/LuaSnip", tag = "v1.1.*" })
 	use({ "saadparwaiz1/cmp_luasnip" })
+	use("jose-elias-alvarez/typescript.nvim")
 	use("rafamadriz/friendly-snippets")
 	use({
 		"nvim-telescope/telescope.nvim",
