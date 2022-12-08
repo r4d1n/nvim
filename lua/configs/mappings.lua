@@ -11,6 +11,9 @@ vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 
--- lsp and diagnostic windows
-vim.cmd([[nnoremap K :lua vim.lsp.buf.hover()<CR>]])
-vim.cmd([[nnoremap <C-k> :lua vim.diagnostic.open_float({ scope = "line" }) <CR>]])
+-- lsp and diagnostics
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })
