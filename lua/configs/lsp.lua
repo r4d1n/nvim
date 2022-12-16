@@ -70,6 +70,12 @@ null_ls.setup({
 					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
+			vim.keymap.set(
+				"n",
+				"<leader><C-f>",
+				"<cmd>lua vim.lsp.buf.format({ bufnr = bufnr })<CR>",
+				{ noremap = true, silent = true }
+			)
 		end
 	end,
 })
