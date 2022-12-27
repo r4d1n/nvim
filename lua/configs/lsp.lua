@@ -77,12 +77,6 @@ null_ls.setup({
 					lsp_format(bufnr)
 				end,
 			})
-			vim.keymap.set(
-				"n",
-				"<leader><C-f>",
-				"<cmd>lua vim.lsp.buf.format({ bufnr = bufnr })<CR>",
-				{ noremap = true, silent = true }
-			)
 		end
 	end,
 })
@@ -92,3 +86,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	virtual_text = false,
 	-- float = true,
 })
+
+return { format = lsp_format }

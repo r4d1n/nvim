@@ -1,5 +1,5 @@
 require("plugins.plugins")
-require("configs.mappings")
 require("configs.settings")
 require("configs.lsp")
 require("configs.treesitter")
+require("configs.mappings")
