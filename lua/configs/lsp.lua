@@ -44,6 +44,15 @@ require("lspconfig").graphql.setup({ capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
 require("lspconfig").prismals.setup({ capabilities = capabilities })
 
+local lsp_format = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name ~= "tsserver"
+		end,
+		bufnr = bufnr,
+	})
+end
+
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
@@ -65,9 +74,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-					-- vim.lsp.buf.formatting_sync()
-					vim.lsp.buf.format({ bufnr = bufnr })
+					lsp_format(bufnr)
 				end,
 			})
 			vim.keymap.set(
