@@ -10,6 +10,9 @@ require("nvim-treesitter.configs").setup({
 
 	highlight = {
 		enable = true,
+		disable = function(_, bufnr)
+			return vim.api.nvim_buf_line_count(bufnr) > 30000
+		end,
 	},
 
 	incremental_selection = {
