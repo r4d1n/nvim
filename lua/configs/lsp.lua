@@ -37,32 +37,12 @@ require("luasnip").filetype_extend("typescript", { "javascript" })
 
 -- Setup lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_on_attach = function(_, bufnr)
-	-- it would be better to handle this in the treesitter setup directly
-	if vim.api.nvim_buf_line_count(bufnr) < 30000 then
-		vim.o.foldmethod = "expr"
-		vim.o.foldcolumn = "auto"
-		vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-		vim.o.foldenable = false -- Disable folding at startup.
-	end
-end
-
 require("lspconfig").tsserver.setup({
 	capabilities = capabilities,
-	on_attach = lsp_on_attach,
 })
-require("lspconfig").graphql.setup({
-	capabilities = capabilities,
-	on_attach = lsp_on_attach,
-})
-require("lspconfig").sumneko_lua.setup({
-	capabilities = capabilities,
-	on_attach = lsp_on_attach,
-})
-require("lspconfig").prismals.setup({
-	capabilities = capabilities,
-	on_attach = lsp_on_attach,
-})
+require("lspconfig").graphql.setup({ capabilities = capabilities })
+require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
+require("lspconfig").prismals.setup({ capabilities = capabilities })
 
 local lsp_format = function(bufnr)
 	vim.lsp.buf.format({
