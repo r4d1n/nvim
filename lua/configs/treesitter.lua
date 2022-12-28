@@ -25,8 +25,3 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
-
-vim.o.foldmethod = "expr"
-vim.o.foldcolumn = "auto"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = false -- Disable folding at startup.
