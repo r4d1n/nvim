@@ -13,11 +13,6 @@ vim.cmd([[ set cursorline ]])
 vim.cmd([[ syntax on ]])
 vim.cmd([[ set bg=light ]])
 vim.cmd([[ set termguicolors ]])
-vim.cmd([[
-  let g:onedark_style = 'light'
-  colorscheme onedark
-]])
-
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 
@@ -48,3 +43,5 @@ require("lualine").setup({
 		},
 	},
 })
+
+vim.cmd.colorscheme("catppuccin")
