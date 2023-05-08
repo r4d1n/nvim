@@ -34,4 +34,5 @@ return require("packer").startup(function()
 			ts_update()
 		end,
 	})
+	use({ "elixir-tools/elixir-tools.nvim", requires = { "nvim-lua/plenary.nvim" } })
 end)

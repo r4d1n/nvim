@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 
+require("elixir").setup()
 cmp.setup({
 	snippet = {
 		expand = function(args)
