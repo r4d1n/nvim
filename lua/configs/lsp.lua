@@ -42,7 +42,7 @@ require("lspconfig").tsserver.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").graphql.setup({ capabilities = capabilities })
-require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
+require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 require("lspconfig").prismals.setup({ capabilities = capabilities })
 require("lspconfig").tailwindcss.setup({})
 require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
