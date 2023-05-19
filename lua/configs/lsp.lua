@@ -44,6 +44,8 @@ require("lspconfig").tsserver.setup({
 require("lspconfig").graphql.setup({ capabilities = capabilities })
 require("lspconfig").sumneko_lua.setup({ capabilities = capabilities })
 require("lspconfig").prismals.setup({ capabilities = capabilities })
+require("lspconfig").tailwindcss.setup({})
+require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
 
 local lsp_format = function(bufnr)
 	vim.lsp.buf.format({
@@ -61,7 +63,7 @@ null_ls.setup({
 		-- require("null-ls").builtins.diagnostics.eslint_d,
 		null_ls.builtins.formatting.eslint_d,
 		null_ls.builtins.formatting.prettier.with({
-			filetypes = { "json" },
+			filetypes = { "json", "handlebars" },
 		}),
 		null_ls.builtins.formatting.stylua,
 		-- null_ls.builtins.formatting.prismaFmt

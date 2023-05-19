@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"html",
 		"heex",
 		"eex",
+		"glimmer",
 	},
 
 	-- Automatically install missing parsers when entering buffer
@@ -36,4 +37,5 @@ require("nvim-treesitter.configs").setup({
 			node_decremental = "<S-TAB>",
 		},
 	},
+	indent = { enable = true },
 })
