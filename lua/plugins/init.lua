@@ -4,6 +4,7 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 	},
+	"nvim-lua/plenary.nvim",
 	{ "echasnovski/mini.nvim", version = "*" },
 	"nvim-tree/nvim-web-devicons",
 	{

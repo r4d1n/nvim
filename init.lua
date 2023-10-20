@@ -13,12 +13,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
+vim.keymap.set("n", "rn", vim.lsp.buf.rename, {})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
 require("lazy").setup("plugins")
 require("configs.lsp")
 require("configs.treesitter")
 require("configs.mini")
 require("configs.conform")
-require("configs.mappings")
+require("configs.telescope")
 require("configs.settings")
 require("configs.lualine")
 require("configs.trouble")
