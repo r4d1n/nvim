@@ -1,4 +1,6 @@
-require("conform").setup({
+local conform = require("conform")
+
+conform.setup({
 	format_on_save = function(bufnr)
 		-- Disable with a global or buffer-local variable
 		if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -31,3 +33,5 @@ vim.api.nvim_create_user_command("YesFormat", function()
 end, {
 	desc = "Re-enable autoformat-on-save",
 })
+
+vim.keymap.set("n", "<leader><C-f>", conform.format, { noremap = true, silent = true })
