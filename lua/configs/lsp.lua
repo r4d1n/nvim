@@ -1,12 +1,14 @@
-require("elixir").setup()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- require("lspconfig").tsserver.setup({}) -- commented in favor of the typescript tools plugin
-require("lspconfig").eslint.setup({})
-require("lspconfig").graphql.setup({})
-require("lspconfig").lua_ls.setup({})
-require("lspconfig").prismals.setup({})
-require("lspconfig").tailwindcss.setup({})
+-- require("lspconfig").tsserver.setup({ capabilities = cmp.capabilities }) -- commented in favor of the typescript tools plugin
+require("lspconfig").eslint.setup({ capabilities = capabilities })
+require("lspconfig").graphql.setup({ capabilities = capabilities })
+require("lspconfig").lua_ls.setup({ capabilities = capabilities })
+require("lspconfig").prismals.setup({ capabilities = capabilities })
+require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
 require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
+
+require("elixir").setup()
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
