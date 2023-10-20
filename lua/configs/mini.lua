@@ -1,7 +1,9 @@
 require("mini.comment").setup()
-require("mini.operators").setup()
-require("mini.surround").setup()
 require("mini.hipatterns").setup()
+require("mini.operators").setup()
+require("mini.pairs").setup()
+require("mini.starter").setup()
+require("mini.surround").setup()
 
 require("mini.completion").setup()
 vim.keymap.set("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
