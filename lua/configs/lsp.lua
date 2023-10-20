@@ -1,6 +1,7 @@
 require("elixir").setup()
 
 -- require("lspconfig").tsserver.setup({}) -- commented in favor of the typescript tools plugin
+require("lspconfig").eslint.setup({})
 require("lspconfig").graphql.setup({})
 require("lspconfig").lua_ls.setup({})
 require("lspconfig").prismals.setup({})
