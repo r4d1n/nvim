@@ -15,7 +15,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	"stevearc/conform.nvim",
-	"airblade/vim-gitgutter",
+	"lewis6991/gitsigns.nvim",
 	"airblade/vim-rooter",
 	"jose-elias-alvarez/typescript.nvim",
 	{
