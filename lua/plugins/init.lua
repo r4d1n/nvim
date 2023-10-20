@@ -18,7 +18,6 @@ return {
 	"stevearc/conform.nvim",
 	"lewis6991/gitsigns.nvim",
 	"airblade/vim-rooter",
-	"jose-elias-alvarez/typescript.nvim",
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
@@ -33,5 +32,10 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
 	},
 }

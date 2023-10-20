@@ -1,7 +1,6 @@
 require("elixir").setup()
 
--- Setup lspconfig
-require("lspconfig").tsserver.setup({})
+-- require("lspconfig").tsserver.setup({}) -- commented in favor of the typescript tools plugin
 require("lspconfig").graphql.setup({})
 require("lspconfig").lua_ls.setup({})
 require("lspconfig").prismals.setup({})
@@ -11,7 +10,6 @@ require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	virtual_text = false,
-	-- float = true,
 })
 
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
