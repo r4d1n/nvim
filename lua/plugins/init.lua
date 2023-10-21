@@ -5,7 +5,8 @@ return {
 		name = "catppuccin",
 	},
 	"nvim-lua/plenary.nvim",
-	{ "echasnovski/mini.nvim", version = "*" },
+	-- { "echasnovski/mini.nvim", version = false },
+	{ "r4d1n/mini.nvim", version = false, dir = "~/workspace/mini.nvim" },
 	"nvim-tree/nvim-web-devicons",
 	{
 		"folke/trouble.nvim",
