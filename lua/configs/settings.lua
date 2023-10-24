@@ -16,6 +16,8 @@ vim.cmd([[ set termguicolors ]])
 vim.cmd([[ set ignorecase ]])
 vim.cmd([[ set smartcase ]])
 
+vim.opt.timeoutlen = 2000
+
 local ag = vim.api.nvim_create_augroup
 local au = vim.api.nvim_create_autocmd
 
