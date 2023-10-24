@@ -7,6 +7,7 @@ require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 require("lspconfig").prismals.setup({ capabilities = capabilities })
 require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
 require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
+require("lspconfig").rust_analyzer.setup({})
 
 require("elixir").setup()
 

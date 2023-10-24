@@ -13,6 +13,7 @@ conform.setup({
 		-- Use a sub-list to run only the first available formatter
 		javascript = { { "eslint_d", "prettierd", "prettier" } },
 		typescript = { { "eslint_d", "prettierd", "prettier" } },
+		rust = { "rustfmt" },
 	},
 })
 
