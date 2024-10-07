@@ -13,6 +13,8 @@ require("nvim-treesitter.configs").setup({
 		"heex",
 		"eex",
 		"glimmer",
+		"hcl",
+		"terraform",
 	},
 
 	-- Automatically install missing parsers when entering buffer

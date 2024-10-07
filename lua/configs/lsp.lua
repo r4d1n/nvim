@@ -8,6 +8,7 @@ require("lspconfig").prismals.setup({ capabilities = capabilities })
 require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
 require("lspconfig").html.setup({ filetypes = { "html", "handlebars" } })
 require("lspconfig").rust_analyzer.setup({})
+require("lspconfig").terraformls.setup({})
 
 require("elixir").setup({
 	nextls = {
