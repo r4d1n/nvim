@@ -9,11 +9,12 @@ conform.setup({
 		return { timeout_ms = 500, lsp_fallback = true }
 	end,
 	formatters_by_ft = {
-		lua = { "stylua" },
 		-- Use a sub-list to run only the first available formatter
 		javascript = { { "eslint_d", "prettierd", "prettier" } },
-		typescript = { { "eslint_d", "prettierd", "prettier" } },
+		lua = { "stylua" },
 		rust = { "rustfmt" },
+		terraform = { "terraformat" },
+		typescript = { { "eslint_d", "prettierd", "prettier" } },
 	},
 })
 
