@@ -35,3 +35,5 @@ au("TextYankPost", {
 })
 
 vim.cmd.colorscheme("catppuccin-frappe")
+
+au({ "BufEnter", "BufWinEnter" }, { pattern = "*.tf", command = "setlocal commentstring=#%s" })
